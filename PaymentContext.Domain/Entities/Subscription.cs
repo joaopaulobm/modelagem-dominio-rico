@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using System;
 using PaymentContext.Shared.Entities;
@@ -23,7 +24,7 @@ namespace PaymentContext.Domain.Entities
         public DateTime CreateDate { get; private set; }
         public DateTime LastUpdateDate { get; private set; }
         public DateTime? ExpireDate { get; private set; }
-        public IReadOnlyCollection<Payment> Payments { get; private set; }
+        public IReadOnlyCollection<Payment> Payments { get { return _payments.ToArray(); } }
 
         public void AddPayment(Payment payment)
         {

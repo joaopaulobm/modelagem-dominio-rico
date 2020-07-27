@@ -6,6 +6,7 @@ namespace PaymentContext.Domain.Entities
     public class PayPalPayment : Payment
     {
         public PayPalPayment(
+            string transactionCode,
             Email email,
             DateTime paidDate,
             DateTime? expireDate,
@@ -22,7 +23,10 @@ namespace PaymentContext.Domain.Entities
                 address)
         {
             Email = email;
+            TransactionCode = transactionCode;
         }
+
+        public string TransactionCode { get; private set; }
 
         public Email Email { get; private set; }
     }
