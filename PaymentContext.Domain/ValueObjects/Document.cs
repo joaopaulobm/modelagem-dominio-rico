@@ -6,7 +6,7 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Document : ValueObject
     {
-        public Document(string number, EDocumentoType eDocumentoType)
+        public Document(string number, EDocumentType eDocumentoType)
         {
             Number = number;
             EDocumentoType = eDocumentoType;
@@ -18,14 +18,14 @@ namespace PaymentContext.Domain.ValueObjects
         }
 
         public string Number { get; set; }
-        public EDocumentoType EDocumentoType { get; set; }
+        public EDocumentType EDocumentoType { get; set; }
 
         private bool Validate()
         {
-            if (EDocumentoType.Equals(EDocumentoType.CNPJ) && Number.Length == 14)
+            if (EDocumentoType.Equals(EDocumentType.CNPJ) && Number.Length == 14)
                 return true;
 
-            if (EDocumentoType.Equals(EDocumentoType.CPF) && Number.Length == 11)
+            if (EDocumentoType.Equals(EDocumentType.CPF) && Number.Length == 11)
                 return true;
 
             return false;

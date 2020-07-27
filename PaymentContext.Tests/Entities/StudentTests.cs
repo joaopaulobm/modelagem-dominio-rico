@@ -19,7 +19,7 @@ namespace PaymentContext.Tests.Entities
         {
             _name = new Name("João Paulo", "Mendes");
             _email = new Email("joaopaulodev@baltateste.com");
-            _document = new Document("12345678912", EDocumentoType.CPF);
+            _document = new Document("12345678912", EDocumentType.CPF);
             _address = new Address("Rua Teste", "100", "Centro", "Divinópolis", "MG", "Brasil", "35000000");
             _student = new Student(_name, _document, _email);
         }
